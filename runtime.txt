@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-python-3.8.10
-=======
-
->>>>>>> refs/remotes/origin/master
