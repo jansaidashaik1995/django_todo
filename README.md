@@ -20,7 +20,14 @@
 
 # 6) select deployment method as Github
 
-# 7) during building master branch we will get some errors
+# 7) during building master branch we will get some errors (importent step)
     ---> 1. disable collectstatic error (solution to this is add STATIC_ROOT = BASE_DIR / 'staticfiles' in settings.py file)
 
 # 8) add whitenoise in MIDDLEWARE (settings.py file)
+
+
+
+
+# finnally our app has deployed
+    url : https://django-todo-app-01.herokuapp.com/
+
