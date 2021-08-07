@@ -23,9 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-mkp=2$_h-fd%luqp*gv39yx^i*spgcc#i*w*^^(8*8dsmjmg^1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['django-todo-app-01.herokuapp.com', '127.0.0.1:8000']
+ALLOWED_HOSTS = ['django-todo-app-01.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -86,12 +87,23 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.BCryptPasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+]
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'OPTIONS': {
+            'min_length': 6,
+        }
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
@@ -122,7 +134,20 @@ USE_TZ = True
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [BASE_DIR / 'static']
+
+
+
+# MEDIA FILES
+
+MEDIA_URL = '/media/'
+
+MEDIA_DIR = BASE_DIR / 'media'
+
+MEDIA_ROOT = MEDIA_DIR
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
