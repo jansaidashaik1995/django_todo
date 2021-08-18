@@ -23,8 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-mkp=2$_h-fd%luqp*gv39yx^i*spgcc#i*w*^^(8*8dsmjmg^1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = False
-DEBUG = True
+DEBUG = False
+# DEBUG = True
 
 ALLOWED_HOSTS = ['django-todo-app-01.herokuapp.com', '127.0.0.1']
 
@@ -136,16 +136,6 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [BASE_DIR / 'static']
-
-
-
-# MEDIA FILES
-
-MEDIA_URL = '/media/'
-
-MEDIA_DIR = BASE_DIR / 'media'
-
-MEDIA_ROOT = MEDIA_DIR
 
 
 
